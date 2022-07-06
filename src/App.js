@@ -1,3 +1,5 @@
+import Header from './components/Header';
+
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
     /*
@@ -49,9 +51,13 @@ const App = function () {
     */
     return (
         // must always have one parent element or will return an error
-        <div className="container">
-            <h1>My App</h1>
-        </div>
+        <>
+            {/* passing in props */}
+            <Header />
+            <div className="container app__container">
+                <h1 className='app__title'>My App</h1>
+            </div>
+        </>
     )
 };
 

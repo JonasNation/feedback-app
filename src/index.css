@@ -1,8 +1,41 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   /* font-size 62.5% -> 1rem = 10px -> 10px/16px = .625 || 62.5% */
   font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background-color: darkblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  line-height: 1.6;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+/* Header */
+.header__container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0;
+}
+
+.header__title {
+  color: rgb(123, 104, 238);
+  text-shadow: 0 0.1rem 0.3rem rgba(255, 255, 255, 0.3);
+}
+
+/* App */
+.app__container {
+  display: flex;
+  margin-left: 1rem;
+  color: white;
 }
