@@ -4,6 +4,7 @@ import Header from './components/Header';
 import FeedbackData from './components/Data/FeedbackData';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
+import FeedbackForm from './components/FeedbackForm';
 
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
@@ -20,6 +21,7 @@ const App = function () {
         <>
             <Header />
             <div className="container app__container">
+                <FeedbackForm />
                 <FeedbackStats feedback={feedback} />
                 <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
             </div>

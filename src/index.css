@@ -23,6 +23,7 @@ body {
 .header__container {
   display: flex;
   justify-content: center;
+  font-size: 1.5rem;
   margin-bottom: 3rem;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0.5rem 0;
@@ -37,9 +38,9 @@ ul {
 }
 
 .container {
-  max-width: 768px;
+  max-width: 76.8rem;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 /* header {
@@ -54,9 +55,9 @@ ul {
 .card {
   background-color: #fff;
   color: #333;
-  border-radius: 15px;
-  padding: 40px 50px;
-  margin: 20px 0;
+  border-radius: 1.5rem;
+  padding: 4rem 5rem;
+  margin: 2rem 0;
   position: relative;
 }
 
@@ -66,7 +67,7 @@ ul {
 }
 
 .card h2 {
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
 }
@@ -75,20 +76,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 30px 0 40px;
+  margin: 3rem 0 4rem;
 }
 
 .rating li,
 .num-display {
   position: relative;
   background: #f4f4f4;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
   text-align: center;
   border-radius: 50%;
-  font-size: 19px;
-  border: 1px #eee solid;
+  font-size: 1.5rem;
+  border: 0.1rem #eee solid;
   transition: 0.3s;
 }
 
@@ -97,8 +98,8 @@ ul {
   top: 50%;
   left: 50%;
   width: 50px;
-  height: 50px;
-  padding: 10px;
+  height: 5rem;
+  padding: 1rem;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -123,14 +124,14 @@ ul {
   display: flex;
   flex-direction: row;
   border: 1px solid #ccc;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
 }
 
 input {
   flex-grow: 2;
   border: none;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 input:focus {
@@ -146,31 +147,31 @@ input:focus {
 
 .num-display {
   position: absolute;
-  top: -10px;
-  left: -10px;
+  top: -1rem;
+  left: -1rem;
 }
 
 .close,
 .edit {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 1rem;
+  right: 2rem;
   cursor: pointer;
   background: none;
   border: none;
 }
 
 .edit {
-  right: 40px;
+  right: 4rem;
 }
 
 .btn {
   color: #fff;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   color: #fff;
-  width: 100px;
-  height: 40px;
+  width: 10rem;
+  height: 4rem;
   cursor: pointer;
 }
 
@@ -199,7 +200,7 @@ input:focus {
 }
 
 .message {
-  padding-top: 10px;
+  padding-top: 1rem;
   text-align: center;
   color: rebeccapurple;
 }
@@ -223,16 +224,16 @@ input:focus {
 }
 
 .about h1 {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .about p {
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 60rem) {
   .rating li {
-    margin: 10px 3px;
+    margin: 1rem 0.3rem;
   }
 
   .rating {
@@ -240,7 +241,7 @@ input:focus {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px 0 40px;
+    margin: 3rem 0 4rem;
   }
 
   .input-group input {
