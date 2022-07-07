@@ -10,6 +10,7 @@ const FeedbackForm = ({ handleAdd }) => {
     const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (text.trim().length > 10) {
