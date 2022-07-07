@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// component shortcut rfce creates function with export
+// component shortcut rfce creates function decleration with export has own this keyword
+// rafc for arrow function with export
 
-function Header({ text }) {
+const Header = ({ text }) => {
 
     return (
         <header>
