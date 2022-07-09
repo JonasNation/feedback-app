@@ -6,13 +6,7 @@ import PropTypes from 'prop-types';
 // import { useState } from 'react';
 
 const FeedbackItem = ({ item, handleDelete }) => {
-    /* setting state - 
-    in brackets destructing the useState function [name of state, function to update state]
-    , default value in useState parentisis */
-    // const [rating, setRating] = useState(7);
-    // const [text, setText] = useState('This is an example of a feedback item');
-
-
+    // props coming from FeedbackList
 
     return (
         <Card>

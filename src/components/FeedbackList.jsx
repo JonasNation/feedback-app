@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FeedbackList = ({ feedback, handleDelete }) => {
+    // props coming from App
+
     // checking if feedback exist
     if (!feedback || feedback.length === 0) {
         return <p>No Feedback Yet</p>
@@ -15,7 +17,6 @@ const FeedbackList = ({ feedback, handleDelete }) => {
                 <FeedbackItem key={item.id} item={item} handleDelete={handleDelete} />
             ))}
         </div>*/
-
 
         <div className='feedback-list'>
             <AnimatePresence>

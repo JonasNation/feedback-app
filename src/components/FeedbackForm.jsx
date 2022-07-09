@@ -5,12 +5,15 @@ import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
 
 const FeedbackForm = ({ handleAdd }) => {
+    // prop comes from App
+
     // state
     const [text, setText] = useState('');
     const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
 
+    // form validation, input must be greater than 10 characters
     const handleSubmit = (event) => {
         event.preventDefault();
         if (text.trim().length > 10) {

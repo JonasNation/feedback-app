@@ -8,8 +8,9 @@ import FeedbackForm from './components/FeedbackForm';
 
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
-    // app level state
+    // app level state - feedback will be passed to components
     const [feedback, setFeedback] = useState(FeedbackData);
+
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4();
         setFeedback([newFeedback, ...feedback]);
