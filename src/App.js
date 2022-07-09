@@ -11,10 +11,13 @@ const App = function () {
     // app level state - feedback will be passed to components
     const [feedback, setFeedback] = useState(FeedbackData);
 
+    // adds uniqe id to new feedback and add displays new feedback with feedback from data file 
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4();
         setFeedback([newFeedback, ...feedback]);
     }
+
+    // alerts before feedback item is deleted
     const deleteFeedback = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setFeedback(feedback.filter((item) => item.id !== id))
