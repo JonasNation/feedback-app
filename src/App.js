@@ -17,9 +17,11 @@ const App = function () {
         setFeedback([newFeedback, ...feedback]);
     }
 
-    // alerts before feedback item is deleted
+    // function to delete a feedback item, also alerts before delete event
     const deleteFeedback = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
+
+            // filters the item that will be deleted
             setFeedback(feedback.filter((item) => item.id !== id))
         }
     }

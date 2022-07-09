@@ -2,8 +2,6 @@ import { FaTimes } from 'react-icons/fa'
 import React from 'react';
 import Card from './shared/Card';
 import PropTypes from 'prop-types';
-// state using hooks
-// import { useState } from 'react';
 
 const FeedbackItem = ({ item, handleDelete }) => {
     // props coming from FeedbackList
