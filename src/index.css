@@ -11,7 +11,7 @@ html {
 
 body {
   height: 100vh;
-  background-color: darkblue;
+  background-image: linear-gradient(to right bottom, rgb(10, 10, 247), darkblue);
   background-size: cover;
   background-repeat: no-repeat;
   line-height: 1.6;
@@ -108,11 +108,9 @@ ul {
 
 .rating li:hover,
 .num-display {
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(148, 0, 211, 0.5),
-    rgb(1148, 0, 211)
-  );
+  background-image: linear-gradient(to right bottom,
+      rgba(148, 0, 211, 0.5),
+      rgb(1148, 0, 211));
   color: #fff;
 }
 
@@ -120,7 +118,7 @@ ul {
   opacity: 0;
 }
 
-[type='radio']:checked ~ label {
+[type='radio']:checked~label {
   background: rgb(148, 0, 211);
   color: #fff;
 }
