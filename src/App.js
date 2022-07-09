@@ -11,7 +11,7 @@ const App = function () {
     // app level state - feedback will be passed to components
     const [feedback, setFeedback] = useState(FeedbackData);
 
-    // adds uniqe id to new feedback and add displays new feedback with feedback from data file 
+    // adds uniqe id to new feedback and displays new feedback with feedback from data file 
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4();
         setFeedback([newFeedback, ...feedback]);
