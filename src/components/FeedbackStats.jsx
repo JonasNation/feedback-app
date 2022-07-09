@@ -19,7 +19,7 @@ const FeedbackStats = ({ feedback }) => {
     )
 }
 
-FeedbackStats.prototype = {
+FeedbackStats.prototypes = {
     feedback: PropTypes.array.isRequired,
 }
 

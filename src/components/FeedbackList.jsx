@@ -30,7 +30,7 @@ const FeedbackList = ({ feedback, handleDelete }) => {
     )
 };
 
-FeedbackList.prototype = {
+FeedbackList.prototypes = {
     feedback: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
