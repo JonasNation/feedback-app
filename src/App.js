@@ -1,10 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
+/* creates a route to another page */
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Header from './components/Header';
 import FeedbackData from './components/Data/FeedbackData';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
+import AboutPage from './pages/AboutPage';
 
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
@@ -28,14 +31,22 @@ const App = function () {
 
     return (
         // must always have one parent element or will return an error
-        <>
+        <Router>
             <Header />
             <div className="container app__container">
-                <FeedbackForm handleAdd={addFeedback} />
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+                <Routes>
+                    <Route exact path='/' element={
+                        <>
+                            <FeedbackForm handleAdd={addFeedback} />
+                            <FeedbackStats feedback={feedback} />
+                            <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+                        </>
+                    }>
+                    </Route>
+                    <Route path='/about' element={<AboutPage />} />
+                </Routes>
             </div>
-        </>
+        </Router>
     )
 };
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 // card is  a style component
 const Card = ({ children, reverse }) => {
+
     return (
         // conditional class
         /*<div className={`card ${reverse && 'reverse'}`}>
@@ -15,6 +16,7 @@ const Card = ({ children, reverse }) => {
             color: reverse ? 'white' : 'black'
         }}>
             {children}
+
         </div>
     )
 };
