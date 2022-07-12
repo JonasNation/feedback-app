@@ -9,7 +9,7 @@ function AboutPage() {
             <div className='about'>
                 <h1>My Feedback App</h1>
                 <p>Wanted to learn how to make a feedback app for a comment system or some type of provided service.</p>
-                <p>Also use the router for different pages</p>
+                <p>Also use the router the two pages</p>
 
                 <p><Link to='/'>Back home</Link></p>
             </div>
