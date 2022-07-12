@@ -8,6 +8,7 @@ import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutPage from './pages/AboutPage';
+import AboutIconLink from './components/AboutIconLink';
 
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
@@ -45,6 +46,7 @@ const App = function () {
                     </Route>
                     <Route path='/about' element={<AboutPage />} />
                 </Routes>
+                <AboutIconLink />
             </div>
         </Router>
     )

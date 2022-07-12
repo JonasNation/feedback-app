@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from '../components/shared/Card';
+import { Link } from 'react-router-dom';
+
 
 function AboutPage() {
     return (
@@ -9,7 +11,7 @@ function AboutPage() {
                 <p>Wanted to learn how to make a feedback app for a comment system or some type of provided service.</p>
                 <p>Also use the router for different pages</p>
 
-                <p><a href="/">Back home</a></p>
+                <p><Link to='/'>Back home</Link></p>
             </div>
         </Card>
     )
