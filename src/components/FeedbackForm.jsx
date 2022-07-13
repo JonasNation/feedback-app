@@ -7,8 +7,6 @@ import RatingSelect from './RatingSelect';
 import FeedbackContext from '../context/FeedbackContext';
 
 const FeedbackForm = () => {
-    // prop comes from App
-
     // state
     const [text, setText] = useState('');
     const [rating, setRating] = useState(10);
@@ -26,7 +24,9 @@ const FeedbackForm = () => {
                 text: text,
                 rating: rating,
             }
+
             addFeedback(newFeedback);
+
             setText('');
         }
     }

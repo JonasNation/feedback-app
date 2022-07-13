@@ -9,7 +9,7 @@ export const FeedbackProvider = ({ children }) => {
         {
             id: 1,
             text: 'This item is feedback item one',
-            rating: 10,
+            rating: 3,
         },
         {
             id: 2,
@@ -19,11 +19,17 @@ export const FeedbackProvider = ({ children }) => {
         {
             id: 3,
             text: 'This item is feedback item three',
-            rating: 10,
+            rating: 7,
         }
     ])
 
-    // adds uniqe id to new feedback and  displays new feedback with feedback from data file 
+    // state to edit feedback
+    const [feedbackEdit, setFeedbackEdit] = useState({
+        item: {},
+        edit: false
+    })
+
+    // adds uniqe id to new feedback and  displays new feedback with feedback from contex via data component 
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4();
         setFeedback([newFeedback, ...feedback]);
@@ -38,12 +44,21 @@ export const FeedbackProvider = ({ children }) => {
         }
     }
 
+    // function to edit/update feedback
+    const editFeedback = (item) => {
+        setFeedbackEdit({
+            item,
+            edit: true
+        })
+    }
+
     return (
         <FeedbackContext.Provider
             value={{
                 feedback,
                 deleteFeedback,
                 addFeedback,
+                editFeedback,
             }}
         >
 

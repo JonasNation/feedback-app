@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FeedbackContext from '../context/FeedbackContext';
 
 const FeedbackList = () => {
-    // props coming from App
-
     //context
     const { feedback } = useContext(FeedbackContext)
 
