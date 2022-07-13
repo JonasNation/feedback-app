@@ -7,7 +7,7 @@ import FeedbackContext from '../context/FeedbackContext';
 
 const FeedbackItem = ({ item }) => {
     // context
-    const { deleteFeedback, editFeedBack } = useContext(FeedbackContext)
+    const { deleteFeedback, editFeedback } = useContext(FeedbackContext)
 
     return (
         <Card>
@@ -19,7 +19,7 @@ const FeedbackItem = ({ item }) => {
                 <FaTimes color='purple' />
             </button>
 
-            <button className="edit" onClick={() => editFeedBack(item.id)}>
+            <button className="edit" onClick={() => editFeedback(item)}>
                 <FaEdit color='purple' />
             </button>
 

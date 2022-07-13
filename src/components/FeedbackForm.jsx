@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import React from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
@@ -14,7 +13,15 @@ const FeedbackForm = () => {
     const [message, setMessage] = useState('');
 
     //context
-    const { addFeedback } = useContext(FeedbackContext)
+    const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext)
+
+    useEffect(() => {
+        if (feedbackEdit.edit === true) {
+            setBtnDisabled(false)
+            setText(feedbackEdit.item.text)
+            setRating(feedbackEdit.item.rating)
+        }
+    }, [feedbackEdit])
 
     // form validation, input must be greater than 10 characters
     const handleSubmit = (event) => {
@@ -25,7 +32,12 @@ const FeedbackForm = () => {
                 rating: rating,
             }
 
-            addFeedback(newFeedback);
+            // updates the selected feedback item
+            if (feedbackEdit.edit === true) {
+                updateFeedback(feedbackEdit.item.id, newFeedback)
+            } else {
+                addFeedback(newFeedback)
+            }
 
             setText('');
         }
