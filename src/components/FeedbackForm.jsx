@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useContext } from 'react';
 import React from 'react';
 import Card from './shared/Card';
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
+import FeedbackContext from '../context/FeedbackContext';
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
     // prop comes from App
 
     // state
@@ -12,6 +14,9 @@ const FeedbackForm = ({ handleAdd }) => {
     const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState('');
+
+    //context
+    const { addFeedback } = useContext(FeedbackContext)
 
     // form validation, input must be greater than 10 characters
     const handleSubmit = (event) => {
@@ -21,7 +26,7 @@ const FeedbackForm = ({ handleAdd }) => {
                 text: text,
                 rating: rating,
             }
-            handleAdd(newFeedback);
+            addFeedback(newFeedback);
             setText('');
         }
     }

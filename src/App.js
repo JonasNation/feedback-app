@@ -1,9 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
 /* creates a route to another page */
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
 import Header from './components/Header';
-import FeedbackData from './components/Data/FeedbackData';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
@@ -13,24 +10,6 @@ import { FeedbackProvider } from './context/FeedbackContext';
 
 // main app component using JSX(Javascript XML) allows me to write html in my components
 const App = function () {
-    // app level state - feedback will be passed to components
-    const [feedback, setFeedback] = useState(FeedbackData);
-
-    // adds uniqe id to new feedback and  displays new feedback with feedback from data file 
-    const addFeedback = (newFeedback) => {
-        newFeedback.id = uuidv4();
-        setFeedback([newFeedback, ...feedback]);
-    }
-
-    // function to delete a feedback item, also alerts before delete event
-    const deleteFeedback = (id) => {
-        if (window.confirm('Are you sure you want to delete?')) {
-
-            // filters the item that will be deleted
-            setFeedback(feedback.filter((item) => item.id !== id))
-        }
-    }
-
     return (
         // must always have one parent element or will return an error
         <FeedbackProvider>
@@ -40,9 +19,9 @@ const App = function () {
                     <Routes>
                         <Route exact path='/' element={
                             <>
-                                <FeedbackForm handleAdd={addFeedback} />
+                                <FeedbackForm />
                                 <FeedbackStats />
-                                <FeedbackList handleDelete={deleteFeedback} />
+                                <FeedbackList />
                             </>
                         }>
                         </Route>
