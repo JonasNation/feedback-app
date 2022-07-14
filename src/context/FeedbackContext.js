@@ -54,8 +54,6 @@ export const FeedbackProvider = ({ children }) => {
         }
     }
 
-
-
     // function to set feedback item to be updated
     const editFeedback = (item) => {
         setFeedbackEdit({
@@ -65,8 +63,19 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     // function to update feedback item
-    const updateFeedback = (id, updatedItem) => {
-        setFeedback(feedback.map((item) => item.id === id ? { ...item, ...updatedItem } : item))
+    const updateFeedback = async (id, updatedItem) => {
+        // update request
+        const response = await fetch(`/feedback/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedItem)
+        })
+
+        const data = await response.json()
+
+        setFeedback(feedback.map((item) => item.id === id ? { ...item, ...data } : item))
     }
 
     return (
