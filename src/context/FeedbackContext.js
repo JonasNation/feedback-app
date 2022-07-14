@@ -44,13 +44,17 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     // function to delete a feedback item, also alerts before delete event
-    const deleteFeedback = (id) => {
+    const deleteFeedback = async (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
+            // delete request to delete feedback item
+            await fetch(`/feedback/${id}`, { method: 'DELETE' })
 
             // filters the item that will be deleted
             setFeedback(feedback.filter((item) => item.id !== id))
         }
     }
+
+
 
     // function to set feedback item to be updated
     const editFeedback = (item) => {
