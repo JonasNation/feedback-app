@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+
 
 const FeedbackContext = createContext();
 
@@ -28,10 +28,19 @@ export const FeedbackProvider = ({ children }) => {
         edit: false
     })
 
-    // adds uniqe id to new feedback and  displays new feedback with feedback from contex via data component 
-    const addFeedback = (newFeedback) => {
-        newFeedback.id = uuidv4();
-        setFeedback([newFeedback, ...feedback]);
+    // adds new feedback and  displays new feedbackfrom contex via backend
+    const addFeedback = async (newFeedback) => {
+        const response = await fetch('/feedback', {
+            method: 'Post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newFeedback),
+        })
+
+        const data = await response.json()
+
+        setFeedback([data, ...feedback]);
     }
 
     // function to delete a feedback item, also alerts before delete event
