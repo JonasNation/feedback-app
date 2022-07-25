@@ -1,6 +1,7 @@
 {
   "name": "feedback-app",
   "version": "0.1.0",
+  "homepage": "https://jonasnation.github.io/feedback-app/",
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
@@ -24,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
-    "dev": "concurrently \"npm run server\" \"npm start\""
+    "dev": "concurrently \"npm run server\" \"npm start\"",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
